@@ -1,10 +1,13 @@
 import os
 import pandas as pd
 
-from Spam_detction.entity import DataValidationConfig
+from Spam_detction.entity.entity import DataValidationConfig
 from Spam_detction.logger import setup_logger
 
-logger = setup_logger("data_validation")
+logger = setup_logger(
+    name="data_validaion",
+    log_file="data_validation.log"
+)
 
 class DataValidation:
 

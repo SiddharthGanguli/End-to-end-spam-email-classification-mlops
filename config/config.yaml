@@ -14,3 +14,14 @@ data_validation:
     - text
     - label
   target_column: label
+
+
+data_preprocessing:
+  root: artifacts/data_preprocessing
+  train_data_path: artifacts/data_ingestion/train.csv
+  test_data_path: artifacts/data_ingestion/test.csv
+  processed_train_path: artifacts/data_preprocessing/train_processed.csv
+  processed_test_path: artifacts/data_preprocessing/test_processed.csv
+  vectorizer_path: artifacts/data_preprocessing/tfidf_vectorizer.pkl
+  text_column: text
+  target_column: label

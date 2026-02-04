@@ -1,1 +1,9 @@
 spam_env/
+!data/**/*.dvc
+!data/**/.gitkeep
+information.json
+logs/
+*.log
+artifacts/**/*.csv
+artifacts/**/*.pkl
+artifacts/**/*.json
