@@ -5,7 +5,8 @@ from pathlib import Path
 from Spam_detction.entity.entity import (
     DataIngestionConfig,
     DataValidationConfig,
-    DataPreprocessingConfig
+    DataPreprocessingConfig,
+    ModelTrainerConfig
 )
 
 class ConfigManager:
@@ -59,4 +60,17 @@ class ConfigManager:
             vectorizer_path=Path(preprocessing["vectorizer_path"]),
             text_column=preprocessing["text_column"],
             target_column=preprocessing["target_column"]
+        )
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        trainer = self.config["model_trainer"]
+        os.makedirs(trainer["root"], exist_ok=True)
+        os.makedirs(trainer["model_dir"], exist_ok=True)
+
+        return ModelTrainerConfig(
+            root_dir=Path(trainer["root"]),
+            train_data_path=Path(trainer["train_data_path"]),
+            test_data_path=Path(trainer["test_data_path"]),
+            model_dir=Path(trainer["model_dir"]),
+            target_column=trainer["target_column"],
+            experiment_name=trainer["experiment_name"]
         )

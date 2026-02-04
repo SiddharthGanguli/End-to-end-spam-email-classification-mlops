@@ -26,3 +26,12 @@ class DataPreprocessingConfig:
     vectorizer_path: Path
     text_column: str
     target_column: str
+
+@dataclass
+class ModelTrainerConfig:
+    root_dir: Path
+    train_data_path: Path
+    test_data_path: Path
+    model_dir: Path
+    target_column: str
+    experiment_name: str

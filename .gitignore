@@ -7,3 +7,4 @@ logs/
 artifacts/**/*.csv
 artifacts/**/*.pkl
 artifacts/**/*.json
+mlruns/

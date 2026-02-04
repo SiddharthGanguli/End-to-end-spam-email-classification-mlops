@@ -1,0 +1,5 @@
+outs:
+- md5: 72c83bfc4a0bb760acd6dfea716fc311
+  size: 74875
+  hash: md5
+  path: LinearSVM.pkl
