@@ -35,3 +35,11 @@ class ModelTrainerConfig:
     model_dir: Path
     target_column: str
     experiment_name: str
+
+@dataclass
+class ModelEvaluationConfig:
+    root_dir: Path
+    model_path: Path
+    test_data_path: Path
+    target_column: str
+    metrics_path: Path

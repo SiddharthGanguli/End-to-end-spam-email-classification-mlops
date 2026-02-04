@@ -6,7 +6,8 @@ from Spam_detction.entity.entity import (
     DataIngestionConfig,
     DataValidationConfig,
     DataPreprocessingConfig,
-    ModelTrainerConfig
+    ModelTrainerConfig,
+    ModelEvaluationConfig
 )
 
 class ConfigManager:
@@ -73,4 +74,18 @@ class ConfigManager:
             model_dir=Path(trainer["model_dir"]),
             target_column=trainer["target_column"],
             experiment_name=trainer["experiment_name"]
+        )
+    
+
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        evaluation = self.config["model_evaluation"]
+        os.makedirs(evaluation["root"], exist_ok=True)
+
+        return ModelEvaluationConfig(
+            root_dir=Path(evaluation["root"]),
+            model_path=Path(evaluation["model_path"]),
+            test_data_path=Path(evaluation["test_data_path"]),
+            target_column=evaluation["target_column"],
+            metrics_path=Path(evaluation["metrics_path"])
         )
