@@ -8,3 +8,4 @@ artifacts/**/*.csv
 artifacts/**/*.pkl
 artifacts/**/*.json
 mlruns/
+telegram_bot.py
